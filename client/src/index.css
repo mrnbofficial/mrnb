@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 23%, 9%);
+  --foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 19%, 16%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --popover: hsl(240, 19%, 16%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --primary: hsl(271, 91%, 65%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(142, 86%, 28%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 19%, 16%);
+  --muted-foreground: hsl(240, 5%, 64%);
+  --accent: hsl(271, 91%, 65%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(356, 90%, 54%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 19%, 27%);
+  --input: hsl(240, 19%, 16%);
+  --ring: hsl(271, 91%, 65%);
+  --radius: 0.75rem;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+.dark {
+  --background: hsl(240, 23%, 9%);
+  --foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 19%, 16%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --popover: hsl(240, 19%, 16%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --primary: hsl(271, 91%, 65%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(142, 86%, 28%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 19%, 16%);
+  --muted-foreground: hsl(240, 5%, 64%);
+  --accent: hsl(271, 91%, 65%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(356, 90%, 54%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 19%, 27%);
+  --input: hsl(240, 19%, 16%);
+  --ring: hsl(271, 91%, 65%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  html {
+    @apply dark;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(271, 91%, 65%), hsl(142, 86%, 28%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .countdown-digit {
+    font-variant-numeric: tabular-nums;
+  }
+  
+  .glow-effect {
+    box-shadow: 0 0 20px hsl(271, 91%, 65%, 0.3);
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from { 
+      box-shadow: 0 0 20px hsl(271, 91%, 65%, 0.3); 
+    }
+    to { 
+      box-shadow: 0 0 30px hsl(271, 91%, 65%, 0.6), 0 0 40px hsl(271, 91%, 65%, 0.3); 
+    }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
