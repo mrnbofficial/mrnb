@@ -3,6 +3,8 @@ import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import path from "path";
 
+  import { fileURLToPath } from "url";
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -54,6 +56,10 @@ app.use((req, res, next) => {
   if (app.get("env") === "development") {
   await setupVite(app, server);
 } else {
+
+// ES modules replacement for __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
   // Only call serveStatic once, with the correct folder
   serveStatic(app, path.join(__dirname, "../client/server/public"));
 }
