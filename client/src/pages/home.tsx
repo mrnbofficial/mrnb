@@ -39,7 +39,7 @@ export default function Home() {
               className="text-xl md:text-2xl text-muted-foreground font-bold"
               data-testid="hero-subtitle"
             >
-              The Next Big Solana Memecoin
+              Mama Raised No Bitch
             </p>
           </div>
 
