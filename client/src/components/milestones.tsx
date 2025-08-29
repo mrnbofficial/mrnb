@@ -12,9 +12,9 @@ export function Milestones() {
   const { ref, isIntersecting } = useIntersection(0.3);
   const [animated, setAnimated] = useState(false);
   const [milestones] = useState<MilestoneData>({
-    telegram: { current: 100, target: 25000, progress: 68 },
-    twitter: { current: 345, target: 50000, progress: 42 },
-    marketCap: { current: 0, target: 1000000, progress: 15 },
+    telegram: { current: 100, target: 25000, progress: 0.25 },
+    twitter: { current: 345, target: 50000, progress: 0.69 },
+    marketCap: { current: 0, target: 1000000, progress: 0 },
   });
 
   const [displayValues, setDisplayValues] = useState({
